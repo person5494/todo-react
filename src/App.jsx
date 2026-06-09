@@ -1,7 +1,9 @@
 import Todo from './components/Todo';
 
 const App = () => {
-  return <Todo />;
+  return (
+      <Todo />
+  );
 };
 
 export default App;
