@@ -1,4 +1,5 @@
 const URL = 'http://localhost:3001/tasks/'
+// const URL = 'https://6a2d730e2edd4cb330d12b7d.mockapi.io/todo/tasks/'
 
 const headers = {
           'Content-Type': 'application/json',
@@ -31,6 +32,7 @@ const tasksAPI = {
   toggleComplete: (id, isDone) => {
     return fetch(`${URL}${id}`, {
       method: 'PATCH',
+      // method: 'PUT',
       headers,
       body: JSON.stringify({isDone})
     })
