@@ -1,69 +1,70 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
-import useTasksLocalStorage from './useTasksLocalStorage'
+import tasksAPI from '../api/tasksAPI'
 
 const useTasks = () => {
-  const {
-    savedTasks,
-    saveTasks,
-  } = useTasksLocalStorage()
-  const [tasks, setTasks] = useState(savedTasks ?? [
-    {id: 'task-1', title: 'Купить молоко', isDone: false},
-    {id: 'task-2', title: 'Пукить кококо', isDone: true},
-    {id: 'task-3', title: 'Кукить момомо', isDone: false},
-  ])
+
+  const [tasks, setTasks] = useState([])
 
   const [newTaskTitle, setNewTaskTitle] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   
   const newTaskInputRef = useRef(null)
 
-  //Мимоизируем функцию, чтобы ее ссылка не создавалась заново при каждом рендере
+  //Мемоизируем функцию, чтобы ее ссылка не создавалась заново при каждом рендере
   const deleteAllTasks = useCallback(() => {
     const isConfirmed = confirm('Are you sure you want to delete all?');
     
     if (isConfirmed) {
-      setTasks([]);
+      tasksAPI.deleteAll(tasks).then(() => setTasks([]))
     }
-  }, [])
-
-  //Мимоизируем функцию, чтобы ее ссылка не создавалась заново при каждом рендере
-  const deleteTask = useCallback((taskId) => {
-    setTasks(
-      tasks.filter((task) => task.id !== taskId)
-    )
   }, [tasks])
 
-  //Мимоизируем функцию, чтобы ее ссылка не создавалась заново при каждом рендере
+  //Мемоизируем функцию, чтобы ее ссылка не создавалась заново при каждом рендере
+  const deleteTask = useCallback((taskId) => {
+    tasksAPI.delete(taskId)
+    .then(() => {
+      setTasks(
+        tasks.filter((task) => task.id !== taskId)
+      )
+    })
+  }, [tasks])
+
+  //Мемоизируем функцию, чтобы ее ссылка не создавалась заново при каждом рендере
   const toggleTaskComplete = useCallback((taskId, isDone) => {
-    setTasks(
-      tasks.map((task) => {
-        if (task.id === taskId) {
-          return {...task, isDone}
-        }
-        return task
-      })
-    )
+    tasksAPI.toggleComplete(taskId, isDone)
+    .then(() => {
+      setTasks(
+        tasks.map((task) => {
+          if (task.id === taskId) {
+            return {...task, isDone}
+          }
+          return task
+        })
+      )
+    }) 
   }, [tasks])
 
   const addTask = useCallback((title) => {
       const newTask = {
-        id: crypto?.randomUUID() ?? Date.now().toString(),
         title,
         isDone: false,
       }
 
-      setTasks((prevTasks) => [...prevTasks, newTask]);
+      tasksAPI.add(newTask)
+      .then((addedTask) => {
+      setTasks((prevTasks) => [...prevTasks, addedTask]);
       setNewTaskTitle('');
       setSearchQuery('');
       newTaskInputRef.current.focus()
+      })
+
+
   }, [])
 
   useEffect(() => {
-    saveTasks(tasks)
-  }, [tasks, saveTasks])
-
-  useEffect(() => {
     newTaskInputRef.current.focus()
+
+    tasksAPI.getAll().then(setTasks)
   },[])
   
   const filteredTasks = useMemo(() => {
