@@ -12,7 +12,12 @@ const tasksAPI = {
 
   getById: (id) => {
     return fetch(`${URL}${id}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Task not found');
+      }
+      return response.json();
+    });
   },
   
   add: (task) => {
