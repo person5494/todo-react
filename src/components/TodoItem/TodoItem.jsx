@@ -16,10 +16,18 @@ const TodoItem = (props) => {
     firstIncompleteTaskRef,
     deleteTask,
     toggleTaskComplete,
+    disappearingTaskId,
+    appearingTaskId,
   } = useContext(TasksContext);
 
   return (
-    <li className={`${styles.todoItem} ${className}`} ref={id === firstIncompleteTaskId ? firstIncompleteTaskRef : null}>
+    <li className={`${styles.todoItem}
+    ${className}
+    ${disappearingTaskId === id ? styles.isDisappearing : ''}
+    ${appearingTaskId === id ? styles.isAppearing : ''}
+    `}
+    ref={id === firstIncompleteTaskId ? firstIncompleteTaskRef : null}
+    >
       <input
         className={styles.checkbox}
         id={id}
@@ -37,7 +45,7 @@ const TodoItem = (props) => {
         className={styles.deleteButton}
         aria-label="Delete"
         title="Delete"
-        onClick={()=>deleteTask(id)}
+        onClick={() => deleteTask(id)}
       >
         <svg
           width="20"
