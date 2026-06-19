@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import AddTaskForm from '../../features/add-task/AddTaskForm';
-import SearchTaskForm from '../../features/search-task/SearchTaskForm';
-import TodoInfo from '../../features/stats/TodoInfo';
-import { TodoList } from '../../entities/todo';
-import Button from '../../shared/ui/Button';
-import { TasksContext } from '../../entities/todo';
+import AddTaskForm from '@/features/add-task/AddTaskForm';
+import SearchTaskForm from '@/features/search-task/SearchTaskForm';
+import TodoInfo from '@/features/stats/TodoInfo';
+import { TodoList } from '@/entities/todo';
+import Button from '@/shared/ui/Button';
+import { TasksContext } from '@/entities/todo';
 import styles from './Todo.module.scss'
 
 const Todo = () => {

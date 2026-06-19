@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
-import tasksAPI from '../../../shared/api/tasks'
+import tasksAPI from '@/shared/api/tasks'
 
 const useTasks = () => {
 
