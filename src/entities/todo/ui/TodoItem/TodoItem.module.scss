@@ -5,6 +5,7 @@
   padding-left: 10px;
   border: var(--border);
   border-radius: var(--border-radius);
+  overflow: hidden;
 
   &:hover {
     background-color: var(--color-gray-1);
@@ -77,6 +78,16 @@
 .label {
   width: 100%;
   pointer-events: none;
+}
+
+.link {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
 }
 
 .deleteButton {
