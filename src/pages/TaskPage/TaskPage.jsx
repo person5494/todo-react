@@ -20,7 +20,7 @@ const TaskPage = (props) => {
     .finally(() => {
       setIsLoading(false)
     })
-  }, [])
+  }, [taskId])
 
   if (isLoading) {
     return <div>Loading...</div>
