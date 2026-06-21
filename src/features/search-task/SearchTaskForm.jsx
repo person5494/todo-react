@@ -1,14 +1,13 @@
 import { useContext } from "react";
 import Field from "@/shared/ui/Field";
-import { TasksContext } from "@/entities/todo";
+import { TasksDataContext, TasksActionsContext } from "@/entities/todo";
 
 const SearchTaskForm = (props) => {
   const { styles } = props
 
-  const {
-    searchQuery,
-    setSearchQuery
-  } = useContext(TasksContext);
+  const { searchQuery } = useContext(TasksDataContext);
+  
+  const { setSearchQuery } = useContext(TasksActionsContext);
 
   return (
     <form

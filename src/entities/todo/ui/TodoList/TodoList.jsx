@@ -1,5 +1,5 @@
 import { memo, useContext } from "react";
-import { TodoItem, TasksContext } from "@/entities/todo";
+import { TodoItem, TasksDataContext } from "@/entities/todo";
 
 const TodoList = (props) => {
   const { styles } = props
@@ -7,7 +7,7 @@ const TodoList = (props) => {
   const {
     tasks,
     filteredTasks,
-  } = useContext(TasksContext);
+  } = useContext(TasksDataContext);
 
   const HasTasks = tasks.length > 0;
   const isEmptyFilteredTasks = filteredTasks?.length === 0;

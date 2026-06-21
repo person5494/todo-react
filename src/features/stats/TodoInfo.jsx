@@ -1,13 +1,16 @@
 import { memo, useContext, useMemo } from "react";
-import { TasksContext } from "@/entities/todo";
+import { TasksDataContext, TasksActionsContext } from "@/entities/todo";
 
 const TodoInfo = (props) => {
   const { styles } = props
 
   const {
     tasks,
+  } = useContext(TasksDataContext);
+
+    const {
     deleteAllTasks,
-  } = useContext(TasksContext);
+  } = useContext(TasksActionsContext);
 
   const done = useMemo(() => {
     return tasks.filter(({ isDone }) => isDone).length

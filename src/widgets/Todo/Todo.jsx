@@ -4,11 +4,11 @@ import SearchTaskForm from '@/features/search-task/SearchTaskForm';
 import TodoInfo from '@/features/stats/TodoInfo';
 import { TodoList } from '@/entities/todo';
 import Button from '@/shared/ui/Button';
-import { TasksContext } from '@/entities/todo';
+import { TasksRefsContext } from '@/entities/todo';
 import styles from './Todo.module.scss'
 
 const Todo = () => {
-  const { firstIncompleteTaskRef } = useContext(TasksContext)
+  const { firstIncompleteTaskRef } = useContext(TasksRefsContext)
 
 
 
