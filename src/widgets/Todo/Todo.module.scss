@@ -28,13 +28,9 @@
   line-height: 1.2;
 }
 
-.themeButton {
+.todoThemeButton {
   position: absolute;
   right: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: transparent;
 }
 
 .addButton {
@@ -42,8 +38,6 @@
     color: var(--color-text-muted);
   }
 }
-
-
 
 .form {
   display: flex;

@@ -1,0 +1,13 @@
+.themeToggleButton {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+  background-color: var(--color-surface-muted);
+
+  transition: var(--transition-duration);
+}
+
+.themeToggleButton:hover {
+  background-color: var(--color-primary);
+}
