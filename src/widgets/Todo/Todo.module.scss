@@ -6,10 +6,19 @@
   max-width: 404px;
   min-height: 429px;
   padding: 24px;
+  color: var(--color-text-primary);
   background-color: var(--color-surface);
   border: var(--border);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+
 }
 
 .title {
@@ -18,6 +27,23 @@
   font-weight: 600;
   line-height: 1.2;
 }
+
+.themeButton {
+  position: absolute;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.addButton {
+    &:disabled {
+    color: var(--color-text-muted);
+  }
+}
+
+
 
 .form {
   display: flex;
@@ -40,6 +66,7 @@
   padding: 0;
   background-color: transparent;
   border: none;
+  color: var(--color-text-primary);
 
   &:hover {
     color: var(--color-text-muted);

@@ -49,6 +49,7 @@ const AddTaskForm = (props) => {
             ref={newTaskInputRef}
           />
           <Button
+          className={styles.addButton}
           type="submit"
           isDisabled={isNewTaskTitleEmpty}
           >Add</Button>

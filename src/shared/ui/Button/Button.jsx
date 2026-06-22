@@ -6,7 +6,8 @@ const Button = (props) => {
     type = 'button',
     children,
     onClick,
-    isDisabled
+    isDisabled,
+    title
   } = props;
 
   return (
@@ -15,6 +16,7 @@ const Button = (props) => {
     type={type}
     disabled={isDisabled}
     onClick={onClick}
+    title={title}
     >
       {children}
       </button>

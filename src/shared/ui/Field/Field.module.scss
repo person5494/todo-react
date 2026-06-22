@@ -1,6 +1,5 @@
 .field {
   position: relative;
-
   &:has(.input:not(:placeholder-shown)) .label {
     color: var(--color-text-primary);
     scale: 0.7;
@@ -21,6 +20,7 @@
   --fieldSeachInputIconSize: 16px;
 
   width: 100%;
+  color: var(--color-text-primary);
   height: var(--input-height);
   padding-inline: var(--fieldInputPaddingX);
   background-color: transparent;
