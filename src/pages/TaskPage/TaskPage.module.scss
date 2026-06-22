@@ -1,0 +1,44 @@
+.taskPage {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  width: 100%;
+  max-width: 404px;
+  min-width: 350px;
+  min-height: 429px;
+  padding: 24px;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.themeButton {
+  align-self: flex-end;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.title {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-decoration:   none;
+}
+
+.text {
+  color: var(--color-text-muted);
+}
+
+.status {
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.error {
+  text-align: center;
+  color: var(--color-danger);
+}
