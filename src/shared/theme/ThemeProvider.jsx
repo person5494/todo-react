@@ -20,9 +20,15 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     const html = document.documentElement
+    const favicon = document.querySelector('#favicon')
 
     html.dataset.theme = theme
     localStorage.setItem('theme', theme)
+    if (favicon) {
+      favicon.href = theme === 'dark'
+      ? '/todo-react/favicon-dark.svg'
+      : '/todo-react/favicon-light.svg'
+    }
   }, [theme])
 
   const value = useMemo(() => ({
