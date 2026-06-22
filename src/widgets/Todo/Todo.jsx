@@ -21,7 +21,7 @@ const Todo = () => {
       <Button
       onClick={(() => firstIncompleteTaskRef.current?.scrollIntoView({behavior: 'smooth'}))}
       >
-        Show first incomplete task
+        First incomplete task
         </Button>
       <TodoList styles={styles} />
     </div>

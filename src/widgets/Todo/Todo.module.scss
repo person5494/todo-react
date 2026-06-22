@@ -6,7 +6,7 @@
   max-width: 404px;
   min-height: 429px;
   padding: 24px;
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
   border: var(--border);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -42,7 +42,7 @@
   border: none;
 
   &:hover {
-    color: var(--color-gray-4);
+    color: var(--color-text-muted);
   }
 }
 
@@ -62,5 +62,5 @@
 
 .emptyMessage {
   text-align: center;
-  color: var(--color-gray-4);
+  color: var(--color-text-muted);
 }

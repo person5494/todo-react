@@ -2,7 +2,7 @@
   position: relative;
 
   &:has(.input:not(:placeholder-shown)) .label {
-    color: var(--color-black);
+    color: var(--color-text-primary);
     scale: 0.7;
     translate: -1.75em -2.6em;
   }
@@ -12,7 +12,7 @@
   position: absolute;
   top: 50%;
   left: 17px;
-  color: var(--color-gray-3);
+  color: var(--color-disabled);
   translate: 0 -50%;
 }
 
@@ -29,11 +29,11 @@
 
   &:hover,
   &:focus {
-    border-color: var(--color-dark-2);
+    border-color: var(--color-primary);
   }
 
   &:focus {
-    background-color: var(--color-gray-1);
+    background-color: var(--color-page-bg);
     outline: none;
   }
 
