@@ -71,7 +71,7 @@
     translate: -50% -50%;
     width: 16px;
     height: 16px;
-    background: url('@/shared/assets/icons/icon-check_white.svg') center/contain no-repeat;
+    background: var(--checkbox-icon) center/contain no-repeat;
   }
 }
 
@@ -107,7 +107,7 @@
   border-radius: inherit;
 
   &:hover {
-    color: var(--color-surface);
+    color: var(--color-page-bg);
     background-color: var(--color-danger-hover-bg);
   }
 

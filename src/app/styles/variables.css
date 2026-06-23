@@ -12,7 +12,7 @@
 
   --color-success: #4caf8a;
   --color-danger: #9a5b5b;
-  --color-danger-hover-bg: #2f3a36;
+  --color-danger-hover-bg: #4f8f7a;
 
   --color-border: #d7e0dc;
   --color-disabled: #b8c2bd;
@@ -24,6 +24,9 @@
 
   --input-height: 40px;
   --transition-duration: 0.2s;
+
+  --field-search-icon: url('@/shared/assets/icons/icon-search_light.svg');
+  --checkbox-icon: url('@/shared/assets/icons/icon-check_light.svg');
 }
 
 [data-theme='dark'] {
@@ -40,7 +43,7 @@
 
   --color-success: #6dd3a0;
   --color-danger: #f19a9a;
-  --color-danger-hover-bg: #3b1f25;
+  --color-danger-hover-bg: #6dd3a0;
 
   --color-border: #374151;
   --color-disabled: #4b5563;
@@ -48,4 +51,7 @@
 
   --border: 1px solid var(--color-border);
   --box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+
+  --field-search-icon: url('@/shared/assets/icons/icon-search_dark.svg');
+  --checkbox-icon: url('@/shared/assets/icons/icon-check_dark.svg');
 }

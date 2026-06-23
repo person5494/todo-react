@@ -21,6 +21,7 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     const html = document.documentElement
     const favicon = document.querySelector('#favicon')
+    const searchTaskIcon = document.querySelector
 
     html.dataset.theme = theme
     localStorage.setItem('theme', theme)
